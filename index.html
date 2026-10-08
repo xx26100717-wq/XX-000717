@@ -4,46 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>高性价比人生指南</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-<h1>高性价比人生指南</h1>
-<p>回答几个问题，生成你的个人行动路线。</p>
+<header class="hero">
+<h1>🌱 高性价比人生指南</h1>
+<p>3分钟生成你的个人行动路线</p>
+</header>
 
-<div class="card">
-<h3>你的画像</h3>
-<input id="age" placeholder="年龄（例如：32）">
-<input id="income" placeholder="月收入（例如：20000）">
+<main class="container">
+<section class="card">
+<h2>创建你的个人画像</h2>
 
-<h3>家庭情况（可多选）</h3>
-<div id="family">
-<label><input type="checkbox" value="单身">单身</label>
-<label><input type="checkbox" value="已婚有孩">已婚有孩</label>
-<label><input type="checkbox" value="房贷">有房贷</label>
-<label><input type="checkbox" value="老人">需要照顾老人</label>
-</div>
+<select id="age"><option>18-25岁</option><option>26-35岁</option><option>36-45岁</option><option>46-55岁</option><option>56岁以上</option></select>
 
-<h3>最担心什么（可多选）</h3>
-<div id="fear">
-<label><input type="checkbox" value="失业">收入下降/失业</label>
-<label><input type="checkbox" value="健康">健康风险</label>
-<label><input type="checkbox" value="养老">养老压力</label>
-<label><input type="checkbox" value="迷茫">人生方向</label>
-</div>
+<select id="income"><option>5000以下</option><option>5000-15000</option><option>15000-30000</option><option>30000-50000</option><option>50000以上</option></select>
 
-<select id="time">
-<option>每周30分钟以内</option>
-<option>每周1-3小时</option>
-<option>每周3-5小时</option>
-<option>每周5小时以上</option>
-</select>
+<select id="career"><option>学生</option><option>普通职员</option><option>专业人士</option><option>管理者</option><option>创业者</option><option>自由职业</option></select>
 
-<button onclick="generate()">生成我的指南</button>
-</div>
+<h3>家庭状态（多选）</h3>
+<label><input name="family" value="已婚有孩" type="checkbox">已婚有孩</label>
+<label><input name="family" value="房贷" type="checkbox">有房贷</label>
+<label><input name="family" value="老人" type="checkbox">照顾老人</label>
+
+<h3>最大担忧（多选）</h3>
+<label><input name="fear" value="收入" type="checkbox">收入下降/失业</label>
+<label><input name="fear" value="健康" type="checkbox">健康风险</label>
+<label><input name="fear" value="养老" type="checkbox">养老压力</label>
+<label><input name="fear" value="方向" type="checkbox">人生方向</label>
+
+<select id="health"><option>很好</option><option>一般</option><option>亚健康</option></select>
+<select id="wealth"><option>没有积蓄</option><option>有储备</option><option>有资产</option></select>
+<select id="time"><option>30分钟以内</option><option>1-3小时</option><option>3-5小时</option><option>5小时以上</option></select>
+
+<button onclick="generate()">生成我的人生指南</button>
+</section>
 
 <div id="result"></div>
-</div>
-<script src="app.js"></script>
+</main>
+
+<script src="js/engine.js"></script>
 </body>
 </html>

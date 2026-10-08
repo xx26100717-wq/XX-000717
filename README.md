@@ -1,13 +1,14 @@
-# LiveBetter 最终用户版
+# LiveBetter Ultimate Final
 
-部署：
-1. 上传全部文件到 GitHub Pages / Cloudflare Pages。
-2. 打开 index.html。
+最终用户版。
 
 功能：
-- 多选家庭情况
-- 多选风险
-- 个性化推荐
+- 暖色UI
+- 人生画像输入
+- 家庭/担忧多选
+- 推荐评分
 - 三层报告
 - 打印保存
 
+部署：
+上传到 GitHub Pages 或 Cloudflare Pages。
