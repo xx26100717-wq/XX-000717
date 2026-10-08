@@ -1,14 +1,13 @@
-# LiveBetter Ultimate Final
+# LiveBetter Ultimate Final 2.0
 
 最终用户版。
 
-功能：
+优化：
 - 暖色UI
-- 人生画像输入
+- 完整人生画像
 - 家庭/担忧多选
-- 推荐评分
-- 三层报告
-- 打印保存
+- 健康/财富/职业维度
+- 三层输出
 
 部署：
-上传到 GitHub Pages 或 Cloudflare Pages。
+上传整个目录到 GitHub Pages 根目录。
