@@ -1,1 +1,49 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>高性价比人生指南 · 个性化推荐</title><link rel="stylesheet" href="style.css"></head><body><main><header><h1>高性价比人生指南</h1><p>回答五个问题，得到有理由、有出处、可执行的个性化建议。</p></header><form id="profile"><div class="fields"><label>1. 你的年龄 <small>示例：26</small><input id="age" type="number" min="16" max="100" placeholder="例如：26" required></label><label>2. 月收入（人民币元） <small>示例：8000</small><input id="income" type="number" min="0" placeholder="例如：8000" required></label><label>3. 家庭状况 <small>示例：未婚 / 已婚有孩子</small><select id="family" required><option value="">请选择</option><option>未婚</option><option>恋爱中</option><option>已婚无孩子</option><option>已婚有孩子</option><option>单亲育儿</option><option>其他</option></select></label><label>4. 你最怕什么 <small>示例：失业、没钱</small><select id="fear" required><option value="">请选择</option><option>健康问题</option><option>失业或收入下降</option><option>没钱或债务</option><option>婚姻与家庭问题</option><option>父母养老</option><option>孩子教育</option><option>时间不够</option><option>法律与财产风险</option><option>个人信息泄露</option><option>不知道未来方向</option></select></label><label>5. 每周能投入多少时间 <small>示例：3 小时</small><input id="time" type="number" min="0" max="168" step="0.5" placeholder="例如：3" required></label></div><button type="submit">生成我的个性化指南</button><p id="status" role="status"></p></form><section id="results" hidden></section><footer>基于《高性价比人生指南》条目整理。评分属于实用优先级启发式排序，不代表医疗、法律或财务专业建议。</footer></main><script src="app.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>高性价比人生指南</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>高性价比人生指南</h1>
+<p>回答几个问题，生成你的个人行动路线。</p>
+
+<div class="card">
+<h3>你的画像</h3>
+<input id="age" placeholder="年龄（例如：32）">
+<input id="income" placeholder="月收入（例如：20000）">
+
+<h3>家庭情况（可多选）</h3>
+<div id="family">
+<label><input type="checkbox" value="单身">单身</label>
+<label><input type="checkbox" value="已婚有孩">已婚有孩</label>
+<label><input type="checkbox" value="房贷">有房贷</label>
+<label><input type="checkbox" value="老人">需要照顾老人</label>
+</div>
+
+<h3>最担心什么（可多选）</h3>
+<div id="fear">
+<label><input type="checkbox" value="失业">收入下降/失业</label>
+<label><input type="checkbox" value="健康">健康风险</label>
+<label><input type="checkbox" value="养老">养老压力</label>
+<label><input type="checkbox" value="迷茫">人生方向</label>
+</div>
+
+<select id="time">
+<option>每周30分钟以内</option>
+<option>每周1-3小时</option>
+<option>每周3-5小时</option>
+<option>每周5小时以上</option>
+</select>
+
+<button onclick="generate()">生成我的指南</button>
+</div>
+
+<div id="result"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
