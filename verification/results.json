@@ -1,0 +1,90 @@
+{
+  "passed": 16,
+  "failed": 0,
+  "unverified": [
+    "Direct file:// opening blocked by managed Chromium policy (ERR_BLOCKED_BY_ADMINISTRATOR); no policy bypass attempted."
+  ],
+  "source": {
+    "chapters": 34,
+    "items": 665
+  },
+  "profiles": [
+    "7,5,15,19,31",
+    "17,16,1,7,13",
+    "20,27,18,34,5",
+    "23,31,14,5,7",
+    "31,23,32,7,21",
+    "33,5,15,19,7"
+  ],
+  "results": [
+    {
+      "name": "34 chapters, 665 distinct complete source records",
+      "status": "PASS"
+    },
+    {
+      "name": "Profile 1: 5+5 chapters, 10+10 distinct items, 3 chapters/6 actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Profile 2: 5+5 chapters, 10+10 distinct items, 3 chapters/6 actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Profile 3: 5+5 chapters, 10+10 distinct items, 3 chapters/6 actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Profile 4: 5+5 chapters, 10+10 distinct items, 3 chapters/6 actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Profile 5: 5+5 chapters, 10+10 distinct items, 3 chapters/6 actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Profile 6: 5+5 chapters, 10+10 distinct items, 3 chapters/6 actions",
+      "status": "PASS"
+    },
+    {
+      "name": "All six profiles yield different chapter recommendations",
+      "status": "PASS"
+    },
+    {
+      "name": "Unspecified pregnancy/infant/disability not recommended to generic profile",
+      "status": "PASS"
+    },
+    {
+      "name": "Relevant special contexts promote their corresponding chapter",
+      "status": "PASS"
+    },
+    {
+      "name": "Every profile dimension participates in matching",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop form, max 3 concerns, full report, reader, action progress, Markdown/PDF export",
+      "status": "PASS"
+    },
+    {
+      "name": "All 34 chapter filters, search, evidence, empty result, pagination",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile 390px / 320px layouts and modal without horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "No JS/console/HTTP errors or external requests; GitHub Pages subpath works",
+      "status": "PASS"
+    },
+    {
+      "name": "After loading, report generation and reader work with network offline",
+      "status": "PASS"
+    }
+  ],
+  "sourceIntegrity": {
+    "filesMatchedByteForByte": 171,
+    "chapters": 34,
+    "advice": 665
+  }
+}

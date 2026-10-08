@@ -1,62 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>高性价比人生指南 Ultimate</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2e9">
+  <meta name="description" content="从34章、665条有出处的生活建议中，找到与你当下最相关的阅读路线与30天行动计划。">
+  <title>LiveBetter · 把生活过得更从容</title>
+  <link rel="icon" href="assets/leaf.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="data/content.js"></script>
+  <script defer src="js/engine.js"></script>
+  <script defer src="js/app.js"></script>
 </head>
 <body>
-<div class="hero">
-<h1>🌱 高性价比人生指南</h1>
-<p>3分钟生成你的专属人生行动路线</p>
-</div>
-
-<div class="container">
-<div class="card">
-<h2>创建你的个人画像</h2>
-
-<label>年龄阶段（示例：26-35岁）</label>
-<select id="age">
-<option>18-25岁</option><option>26-35岁</option><option>36-45岁</option><option>46-55岁</option><option>56岁以上</option>
-</select>
-
-<label>收入阶段（示例：15000-30000）</label>
-<select id="income">
-<option>5000以下</option><option>5000-15000</option><option>15000-30000</option><option>30000-50000</option><option>50000以上</option>
-</select>
-
-<label>职业状态</label>
-<select id="career">
-<option>学生</option><option>普通职员</option><option>专业人士</option><option>管理者</option><option>创业者</option><option>自由职业</option>
-</select>
-
-<h3>家庭状态（可多选）</h3>
-<div id="family"></div>
-
-<h3>最大担忧（最多选择3项）</h3>
-<div id="fear"></div>
-
-<label>健康状态</label>
-<select id="health">
-<option>很好</option><option>偶尔疲劳</option><option>长期压力大</option><option>睡眠问题</option><option>慢性问题</option>
-</select>
-
-<label>财富状态</label>
-<select id="wealth">
-<option>没有积蓄</option><option>3-6个月储备</option><option>有资产</option><option>有投资经验</option><option>财务自由目标</option>
-</select>
-
-<label>每周投入时间</label>
-<select id="time">
-<option>30分钟以内</option><option>1-3小时</option><option>3-5小时</option><option>5小时以上</option>
-</select>
-
-<button onclick="generate()">生成我的人生指南</button>
-</div>
-<div id="result"></div>
-</div>
-
-<script src="js/app.js"></script>
+  <header class="topbar">
+    <a class="brand" href="#profile" aria-label="LiveBetter 首页"><img src="assets/leaf.svg" alt="" width="34" height="34"><span>LiveBetter<small>高性价比人生指南</small></span></a>
+    <nav aria-label="主导航">
+      <button data-view="profile" class="nav-item active" aria-current="page">个人画像</button>
+      <button data-view="report" class="nav-item">我的指南</button>
+      <button data-view="library" class="nav-item">完整书库</button>
+    </nav>
+    <span class="local-badge"><i></i> 本地运行 · 无需登录</span>
+  </header>
+  <main>
+    <section id="view-profile" class="view">
+      <div class="hero">
+        <div class="hero-copy"><span class="eyebrow">A LITTLE CLARITY. A BETTER EVERYDAY.</span>
+          <h1>生活有很多答案，<br>先找到<span>适合你的那几个。</span></h1>
+          <p>不必一次改变全部。花 3 分钟梳理当下，<br class="desktop">从有出处的建议里，找到值得先读、先做的小事。</p>
+          <div class="hero-stats"><span><b>34</b> 个完整章节</span><span><b>665</b> 条原文建议</span><span><b>30</b> 天行动计划</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="leaf leaf-three"></div><div class="stem"></div><div class="art-note">慢慢来，也是在向前。<span>GROW AT YOUR OWN PACE</span></div></div>
+      </div>
+      <div class="workspace-grid">
+        <form id="profile-form" class="panel">
+          <div class="section-heading"><span class="step">01</span><div><h2>先认识一下，现在的你</h2><p>选最接近的状态即可。这不是测评，也没有标准答案。</p></div></div>
+          <div class="form-grid" id="basic-fields"></div>
+          <fieldset><legend>你的家庭与生活状态 <span>可多选</span></legend><div id="family-options" class="chips"></div></fieldset>
+          <fieldset><legend>最近最想解决的事 <span>最多选 3 项</span></legend><div id="concern-options" class="chips"></div><p id="concern-feedback" class="feedback" role="status" aria-live="polite"></p></fieldset>
+          <div class="form-grid" id="resource-fields"></div>
+          <div class="submit-row"><button type="submit" class="button primary">生成我的人生指南 <span aria-hidden="true">↗</span></button><p>画像只用于当前浏览器内的推荐，不发送至服务器。</p></div>
+        </form>
+        <aside class="side-notes">
+          <div class="panel roadmap"><span class="eyebrow">YOUR PERSONAL ROADMAP</span><h2>少一点迷茫，<br>多一点有据可循。</h2><ol><li><b>找到阅读方向</b><p>5 个优先章节，5 个后备章节。每一个都有推荐理由。</p></li><li><b>看清选择与代价</b><p>20 条建议，保留原文成本、收益、证据与来源。</p></li><li><b>从小事开始行动</b><p>先读 3 章、从 6 条建议起步，用 30 天找到自己的节奏。</p></li></ol></div>
+          <div class="note"><span>✳</span><p>这是备选清单，不是任务清单。<br>挑走一两条，也很好。</p></div>
+        </aside>
+      </div>
+    </section>
+    <section id="view-report" class="view" hidden><div id="report-content"></div></section>
+    <section id="view-library" class="view" hidden>
+      <div class="page-heading"><span class="eyebrow">THE COMPLETE COLLECTION</span><h1>想了解的，都可以慢慢读。</h1><p>34 章 · 665 条建议 · 保留原文、参考来源与证据等级</p></div>
+      <div class="panel library-controls"><label>搜索全文<input id="search" type="search" placeholder="例如：租房、睡眠、劳动合同…"></label><label>章节<select id="chapter-filter"><option value="">全部章节</option></select></label><label>证据等级<select id="evidence-filter"><option value="">全部等级</option><option>A</option><option>B</option><option>C</option></select></label></div>
+      <div id="chapter-context"></div><div class="list-heading"><p id="search-count" role="status" aria-live="polite"></p><button id="clear-filters" class="text-button">重置筛选</button></div>
+      <div id="library-list" class="advice-grid"></div><div id="pagination" class="pagination"></div>
+    </section>
+    <section class="about panel"><details><summary>内容来源、推荐方式与使用说明</summary><div class="about-body"><p>正文来自 <a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener noreferrer">eternity4719 / HowToLiveBetter《高性价比人生指南》</a>，使用你提供的 2026-10-05 快照，共 34 章、665 条。内容按 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> 使用；原作者代码许可见 <a href="source/LICENSE-CODE">MIT 许可</a>。</p><p>本工具新增画像标签、推荐排序、阅读界面和行动卡。标签根据章节主题与标题关键词生成，排序使用年龄、收入、家庭、职业、担忧、健康、财富和时间；分数只是阅读匹配度，不代表风险诊断、收益承诺或原作者评价。没有给出条件的专门场景会降低优先级，仍可在书库查阅。</p><p>每章内沿用原文的条目编号，界面标为“第 X 章 · 第 Y 节（原文第 Y 条）”。证据等级沿用原作者标注，未重新评级，也未逐一复核外部文献。医疗、法律及财务建议请结合适用条件与当地最新规则；用药、诊疗等决定应咨询相应专业人士，急症应及时求助。</p><p>报告保存在当前页面内存中；只有你勾选的行动进度会存入本机浏览器，可随时清除。共享设备上请导出后清除进度。网站没有账号、追踪脚本或外部字体，不上传画像。全部源文档及核实记录随包提供：<a href="source/README.md">原始说明</a> · <a href="source/LICENSE">正文许可</a> · <a href="data/content.json" download>结构化内容</a>。</p></div></details></section>
+  </main>
+  <footer><span class="brand-text">LiveBetter<span>让有限的时间，留给值得的事。</span></span><span>依据原文 · 由你选择 · 一点点行动</span></footer>
+  <dialog id="reader"><div class="dialog-toolbar"><span>原文阅读</span><button id="close-reader" class="icon-button" aria-label="关闭阅读">×</button></div><article id="reader-content"></article></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="panel">请启用 JavaScript 使用个性化推荐，或直接阅读 <a href="source/README.md">完整原文目录</a>。</p></noscript>
 </body>
 </html>
