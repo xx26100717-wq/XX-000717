@@ -1,1 +1,1 @@
-最终用户版：已接入LiveBetter 665条真实建议。上传到GitHub Pages/Cloudflare Pages即可使用。
+人生指南前置工具；已接入LiveBetter 665条真实建议。
